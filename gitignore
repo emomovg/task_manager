@@ -1,2 +1,2 @@
 .golangci.yml
-cmd/data.json
+cmd/tasks.json
