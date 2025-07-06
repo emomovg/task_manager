@@ -26,7 +26,6 @@ func main() {
 	}
 
 	fmt.Print("Task Manager\n-----------\n1. Add task\n2. List tasks\n3. Remove task\n4. Exit \n")
-
 OuterLoop:
 	for {
 		fmt.Print("> ")
