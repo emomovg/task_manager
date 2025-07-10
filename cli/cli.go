@@ -26,11 +26,11 @@ func Run(manager *internal.TaskManager) error {
 
 		switch command {
 		case add:
-			addTask(manager)
+			AddTask(manager)
 		case show:
-			showAllTasks(manager)
+			ShowAllTasks(manager)
 		case remove:
-			deleteTask(manager)
+			DeleteTask(manager)
 		case saveAndExit:
 			err = SaveAndExit(manager)
 			return err
@@ -40,7 +40,7 @@ func Run(manager *internal.TaskManager) error {
 	}
 }
 
-func showAllTasks(tm *internal.TaskManager) {
+func ShowAllTasks(tm *internal.TaskManager) {
 	fmt.Println("Tasks:")
 	tasks := tm.GetAllTasks()
 	for _, task := range tasks {
@@ -52,7 +52,7 @@ func showAllTasks(tm *internal.TaskManager) {
 	}
 }
 
-func addTask(manager *internal.TaskManager) {
+func AddTask(manager *internal.TaskManager) {
 	fmt.Print("Enter task title: ")
 	scanner := bufio.NewScanner(os.Stdin)
 	if !scanner.Scan() {
@@ -64,7 +64,7 @@ func addTask(manager *internal.TaskManager) {
 	fmt.Println("Task added!")
 }
 
-func deleteTask(manager *internal.TaskManager) {
+func DeleteTask(manager *internal.TaskManager) {
 	var id int
 	fmt.Print("Enter id for remove: ")
 	_, er := fmt.Scan(&id)
